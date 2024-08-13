@@ -1,0 +1,10 @@
+.mainContainer .threadsContainer {
+  width: 50%;
+  margin: 30px auto;
+}
+.mainContainer .threadsContainer .threadTitle {
+  width: 100%;
+  margin-bottom: 30px;
+  color: #50514E;
+  font-size: 30px;
+}/*# sourceMappingURL=threadContainer.module.css.map */

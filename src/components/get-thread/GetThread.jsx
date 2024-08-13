@@ -4,12 +4,17 @@ import classes from "./getThread.module.scss";
 
 export const GetThread = () => {
   // state
-    const [threads, setThreads] = useState([''])
-    useEffect(() => getThreads(),[]);
+    const [threads, setThreads] = useState([""])
+    useEffect(() => {
+      async function featchData() {
+        await getThreads();
+      }
+      featchData();
+    },[]);
 
   // function
   // スレッド取得関数
-const getThreads = async () => {
+  const getThreads = async () => {
     // API からスレッドデータ取得
     try {
     const response = await fetch("https://railway.bulletinboard.techtrain.dev/threads");

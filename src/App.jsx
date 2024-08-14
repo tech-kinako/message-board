@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Header } from "./components/header/Header";
 import { ThreadContainer } from "./components/thread-container/ThreadContainer";
-import { CreateThreadContainer } from "./components/create-thread-container/CreateThreadContainer";
+import { PostThreadContainer } from "./components/post-thread-container/PostThreadContainer";
 
 export function App() {
   return (
@@ -16,7 +16,7 @@ export function App() {
       <Route path="/threads/new" element={
           <>
             <Header isLink="false" />
-            <CreateThreadContainer />
+            <PostThreadContainer />
           </>
         }
       />

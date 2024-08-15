@@ -17,7 +17,7 @@ export const ThreadContainer = (props) => {
   return (
     <div className={classes.mainContainer}>
       <div className={classes.threadsContainer}>
-        <h2 className={classes.threadTitle}>スレッド投稿一覧</h2>
+        <h2 className={classes.threadTitle}>スレッド内投稿一覧</h2>
           <PostThreadDetail />
       </div>
     </div>

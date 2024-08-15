@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import classes from "./PostThreadDetail.module.scss";
+import { PostThread } from "../post-thread/PostThread";
 
 export const PostThreadDetail = () => {
     // state
@@ -21,7 +22,6 @@ export const PostThreadDetail = () => {
   // function
   // スレッド取得関数
   const getPostThreads = async () => {
-    console.log("getPostTherad");
     // API からスレッドデータ取得
     try {
     const response = await fetch(`https://railway.bulletinboard.techtrain.dev/threads/${thread_Id}/posts`);
@@ -46,6 +46,10 @@ export const PostThreadDetail = () => {
   return (
     <>
       {viewPostThreads()}
+      <div className={classes.newPostContainer}>
+        <h2 className={classes.newPostTitle}>新規投稿</h2>
+        <PostThread thread_Id={thread_Id} getPostThreads={getPostThreads() }/>
+      </div>
     </>
   );
 }

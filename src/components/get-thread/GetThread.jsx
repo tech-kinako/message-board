@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import classes from "./getThread.module.scss";
 
 export const GetThread = () => {
@@ -32,9 +33,11 @@ export const GetThread = () => {
   const viewThreads = () => {
     if(threads.length === 1) { return};
     return threads.map(thread => (
-      <div key={thread.id} className={classes.threadContent}>
-        {thread.title}
-      </div>
+        <Link to={`/threads/${thread.id}`} key="thread.id" className={classes.threadLink} style={{ textDecoration: 'none' }}>
+          <div key={thread.id} className={classes.threadContent}>
+            {thread.title}
+          </div>
+        </Link>
     )
   )};
 

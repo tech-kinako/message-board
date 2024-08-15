@@ -9,7 +9,7 @@ export function App() {
       <Route exact path="/" element={
           <>
             <Header  isLink="true" />
-            <ThreadContainer />
+            <ThreadContainer transition="root" />
           </>
         }
       />
@@ -19,6 +19,13 @@ export function App() {
             <PostThreadContainer />
           </>
         }
+      />
+      <Route path="/threads/:thread_Id" element= {
+        <>
+          <Header isLink="false"/>
+          <ThreadContainer transition="threadId" />
+        </>
+      }
       />
     </Routes>
   );

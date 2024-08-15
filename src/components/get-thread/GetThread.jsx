@@ -5,6 +5,8 @@ import classes from "./getThread.module.scss";
 export const GetThread = () => {
   // state
     const [threads, setThreads] = useState([""])
+
+  // effect
     useEffect(() => {
       async function featchData() {
         await getThreads();
@@ -18,10 +20,10 @@ export const GetThread = () => {
     // API からスレッドデータ取得
     try {
     const response = await fetch("https://railway.bulletinboard.techtrain.dev/threads");
-    if ( !response.status === 200) { throw new Error(response.status)};
+    if (!(response.status === 200)) { throw new Error(response.status)};
       const data = await response.json();
       setThreads(data.map(thread => thread));
-    }catch (error) {
+    } catch (error) {
       console.error(error.message);
     }
   }

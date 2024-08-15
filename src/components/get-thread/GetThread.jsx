@@ -31,7 +31,6 @@ export const GetThread = () => {
 
   // スレッド表示処理
   const viewThreads = () => {
-    if(threads.length === 1) { return};
     return threads.map(thread => (
         <Link to={`/threads/${thread.id}`} key="thread.id" className={classes.threadLink} style={{ textDecoration: 'none' }}>
           <div key={thread.id} className={classes.threadContent}>

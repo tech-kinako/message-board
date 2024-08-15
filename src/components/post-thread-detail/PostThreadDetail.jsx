@@ -35,7 +35,6 @@ export const PostThreadDetail = () => {
 
   // スレッド表示処理
   const viewPostThreads = () => {
-    if(postThreads.length === 1) { return};
     return postThreads.map(thread => (
           <div key={thread.id} className={classes.threadContent}>
             {thread.post}
